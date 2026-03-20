@@ -62,11 +62,72 @@ body {
     background: #fff;
     border: 1px solid #eee;
     border-radius: 15px;
-    padding: 20px;
+    padding: 30px; /* Увеличил внутренние отступы */
     transition: 0.3s;
-    text-align: center;
-    width: 300px;
+    text-align: left; /* Текст лучше читается по левому краю */
+    width: 450px; /* Увеличил ширину под текст */
+    display: flex;
+    flex-direction: column;
 }
+
+/* СТИЛЬ ДЛЯ ФОТО В КАРТОЧКАХ */
+.product-card img {
+    width: 100%;
+    max-height: 250px; /* Ограничиваем высоту фото */
+    object-fit: contain; /* Картинка впишется в область без искажений */
+    background-color: #fcfcfc; /* Легкий фон, если фото меньше области */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+/* Эффект при наведении на саму карточку — фото чуть увеличивается */
+.product-card:hover img {
+    transform: scale(1.02);
+}
+
+/* Обновленный контейнер карточки (сделаем чуть уже для баланса) */
+.product-card {
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.3s;
+    text-align: left;
+    width: 400px; /* Оптимальная ширина для текста и фото */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+
+/* СТИЛЬ ОПИСАНИЯ */
+.product-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Растягивает блок, чтобы цены были на одном уровне */
+}
+
+.price {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #ff8c00;
+    margin: 10px 0 0 0;
+    text-align: center; /* Цена по центру */
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 500px) {
+    .product-card {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
 
 .product-card:hover {
     transform: translateY(-10px);
@@ -75,7 +136,7 @@ body {
 
 .product-card img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .price {
